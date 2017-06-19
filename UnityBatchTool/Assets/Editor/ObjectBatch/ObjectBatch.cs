@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEngine.Events;
 
 /// <summary>
 /// 查找场景中含有该MonoBehavior子类的所有对象
@@ -10,7 +8,7 @@ using UnityEngine.Events;
 namespace CTWCYS.Editor.Batch
 {
 
-    public class ObjectBatch : EditorWindow
+    public class ObjectBatchWindow : EditorWindow
     {
        /// <summary>
        ///需要查找的脚本的类型
@@ -28,23 +26,23 @@ namespace CTWCYS.Editor.Batch
         /// <summary>
         /// 查找的脚本
         /// </summary>
-        private MonoScript finder = new MonoScript();
+        private MonoScript finder ;
         /// <summary>
         /// 处理的脚本
         /// </summary>
-        private MonoScript batch = new MonoScript();
+        private MonoScript batch ;
        
     
         [MenuItem("Finder/MonoFinder")]
         static void Init()
         {
-           EditorWindow.GetWindow<ObjectBatch>();
+           EditorWindow.GetWindow<ObjectBatchWindow>();
         }
 
        
         void OnGUI()
         {
-            Debug.Log(Event.current);
+            
             scrollPosition = GUILayout.BeginScrollView(scrollPosition);            
 
             GUILayout.Label("如何查找。拖拽一个继承FindInterface的脚本,可为空");
