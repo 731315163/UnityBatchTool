@@ -45,9 +45,9 @@ namespace CTWCYS.Editor.Batch
             
             scrollPosition = GUILayout.BeginScrollView(scrollPosition);            
 
-            GUILayout.Label("如何查找。拖拽一个继承FindInterface的脚本,可为空");
+            GUILayout.Label("拖拽一个继承FindInterface的脚本用于查找,可为空");
             finder = EditorGUILayout.ObjectField(finder,typeof(MonoScript),true) as MonoScript ;
-            GUILayout.Label("如何处理。拖拽一个继承BtachInterface的脚本，可为空");
+            GUILayout.Label("拖拽一个继承BtachInterface的脚本批处理，可为空");
             batch =  EditorGUILayout.ObjectField(batch, typeof(MonoScript), true) as MonoScript;
 
             if (GUILayout.Button("添加新脚本。将会按该脚本的类型查找场景中的物体"))
